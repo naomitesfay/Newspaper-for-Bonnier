@@ -1,4 +1,4 @@
-# Sprint 1: Team Project Group 1
+# Sprint 2: Team Project Group 1
 
 ## 📰 New Online Newspaper for Bonnier 
 
