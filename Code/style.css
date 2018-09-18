@@ -1,0 +1,27 @@
+* {
+
+}
+
+html {
+
+}
+
+.newsContainer {
+width: 80%;
+}
+
+.allNews {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.news {
+  width: 20%;
+}
+
+.news img {
+  width: 100%;
+}
