@@ -26,6 +26,7 @@ const recievedNews = (newsdata) => {
                 <img src="${article.urlToImage}"/>
               </div>
                 <div class="news-content">
+                  <p>${article.publishedAt}</p>
                   <p>${article.source.name}</p>
                   <h2>${smallTitle}</h2>
                   <p>${shortDescription}</p>

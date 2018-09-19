@@ -7,7 +7,6 @@ html {
 }
 
 .newsContainer {
-  width: 80%;
   margin: 20px;
 }
 
@@ -40,11 +39,15 @@ a {
 .news img {
   width: 100%;
   height: 200px;
+  object-fit: cover;
 }
 
 
 @media screen and (max-width: 600px) {
+.news-content {
+  padding: 10px 35px 0px;
 
+}
 .news{
   width: 600px;
   height: 500px;
@@ -52,10 +55,10 @@ a {
   position: relative;
 }
 
-.news-image {
+/* .news-image { */
   /* position: absolute; */
-  overflow: hidden;
+  /* overflow: hidden;
   height:auto;
   width: 100%;
-  }
+  } */
 }
