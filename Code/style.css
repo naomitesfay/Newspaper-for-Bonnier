@@ -3,7 +3,7 @@
 }
 
 html {
-  background: #C9DBBA;
+  background: #F1F7ED;
 }
 
 .newsContainer {
@@ -22,22 +22,40 @@ html {
 .news {
   width: 25%;
   margin: 10px;
+  background-color: white;
+}
+
+.news-content {
+    padding: 10px;
 
 }
+
+a {
+  color: black;
+  text-decoration: none;
+
+}
+
 
 .news img {
   width: 100%;
   height: 200px;
 }
 
-@media screen and (max-width: 600px;) {
+
+@media screen and (max-width: 600px) {
 
 .news{
-  width: 100%;
-  
-
-
+  width: 600px;
+  height: 500px;
+  margin: 10px;
+  position: relative;
 }
 
-
+.news-image {
+  /* position: absolute; */
+  overflow: hidden;
+  height:auto;
+  width: 100%;
+  }
 }

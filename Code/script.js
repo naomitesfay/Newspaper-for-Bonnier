@@ -22,11 +22,15 @@ const recievedNews = (newsdata) => {
 					//Here we create and add html elements to our html file
 					document.querySelector(".allNews").innerHTML +=
             `<div class="news">
-              <img src="${article.urlToImage}"/>
-              <p>${article.source.name}</p>
-              <h2>${smallTitle}</h2>
-              <p>${shortDescription}</p>
-              <a href="${article.url}">Read more</a>
+              <div class="news-image">
+                <img src="${article.urlToImage}"/>
+              </div>
+                <div class="news-content">
+                  <p>${article.source.name}</p>
+                  <h2>${smallTitle}</h2>
+                  <p>${shortDescription}</p>
+                  <a href="${article.url}">Read more</a>
+                </div>
             </div>`
     })
 }
