@@ -23,6 +23,7 @@ const recievedNews = (newsdata) => {
 					document.querySelector(".allNews").innerHTML +=
             `<div class="news">
               <img src="${article.urlToImage}"/>
+              <p>${article.source.name}</p>
               <h2>${smallTitle}</h2>
               <p>${shortDescription}</p>
               <a href="${article.url}">Read more</a>
