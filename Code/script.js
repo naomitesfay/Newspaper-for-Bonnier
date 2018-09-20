@@ -8,32 +8,67 @@ const url = `https://newsapi.org/v2/everything?language=sv&q=hållbarhet&q=tekni
 const recievedNews = (newsdata) => {
 
 	// For each article object from the API, we create a new div in HTML.
-    newsdata.articles.forEach((article) => {
+    newsdata.articles.forEach((article, index) => {
 
-      let smallTitle = article.title;
-      if (article.title.length > 90) {
-        smallTitle = article.title.fontsize(4);
+      // let smallTitle = article.title;
+      // if (article.title.length > 90) {
+      //   smallTitle = article.title.fontsize(4);
+      // }
+      //
+      // const descriptionLength = 100;
+      // let shortDescription = article.description;
+      // if (article.description.length > descriptionLength) {
+      //   shortDescription = article.description.substring (0,descriptionLength)+'...';
+      // }
+
+
+      if (article.urlToImage && index < 1) {
+        document.querySelector(".allNews").innerHTML +=
+        `<div class="topNews">
+        <div class="news-image">
+          <img src="${article.urlToImage}"/>
+        </div>
+          <div class="news-content">
+            <p>Publicerad ${article.publishedAt}</p>
+            <p>${article.source.name.toLowerCase()}</p>
+            <h2>${article.title}</h2>
+            <p>${article.description}</p>
+            <a href="${article.url}">Read more</a>
+          </div>`
       }
 
-      const descriptionLength = 100;
-      let shortDescription = article.description;
-      if (article.description.length > descriptionLength) {
-        shortDescription = article.description.substring (0,descriptionLength)+'...';
+    else if (article.urlToImage && index=== 1){
+  document.querySelector(".allNews").innerHTML +=
+        `<div class="topNewssecond">
+        <div class="news-image">
+          <img src="${article.urlToImage}"/>
+        </div>
+          <div class="news-content">
+            <p>Publicerad ${article.publishedAt}</p>
+            <p>${article.source.name.toLowerCase()}</p>
+            <h2>${article.title}</h2>
+            <p>${article.description}</p>
+            <a href="${article.url}">Read more</a>
+          </div>`
       }
+      else {
+
 					//Here we create and add html elements to our html file
 					document.querySelector(".allNews").innerHTML +=
+
             `<div class="news">
               <div class="news-image">
                 <img src="${article.urlToImage}"/>
               </div>
                 <div class="news-content">
-                  <p>${article.publishedAt}</p>
-                  <p>${article.source.name}</p>
-                  <h2>${smallTitle}</h2>
-                  <p>${shortDescription}</p>
+                  <p>Publicerad ${article.publishedAt}</p>
+                  <p>${article.source.name.toLowerCase()}</p>
+                  <h2>${article.title}</h2>
+                  <p>${article.description}</p>
                   <a href="${article.url}">Read more</a>
                 </div>
             </div>`
+          }
     })
 }
 

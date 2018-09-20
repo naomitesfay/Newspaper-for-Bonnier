@@ -9,6 +9,7 @@ html {
 body {
   margin: 0;
 }
+
 /* NAV-BAR */
 
 .navbar {
@@ -41,15 +42,20 @@ body {
   margin-right: 2%;
 }
 
+/* Main site */
 .site-content {
 width: 100%;
 }
 
 
 .newsContainer {
-  margin-top: 30px;
+  margin-top: 50px;
   width: 75%;
 }
+
+
+
+/* News grid */
 
 .allNews {
   width: 100%;
@@ -57,6 +63,35 @@ width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+}
+
+/* Top Article */
+
+.topNews {
+  width: calc(60% + 20px);
+  height: auto;
+  margin: 10px;
+  background-color: white;
+}
+
+
+.topNews img {
+width: 100%;
+height: 300px;
+object-fit: cover;
+}
+
+.topNewssecond {
+  width: 30%;
+  margin: 10px;
+  background-color: white;
+
+}
+
+.topNewssecond img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .news {
@@ -75,6 +110,7 @@ width: 100%;
   text-decoration: none;
 
 }
+
 
 
 .news img {
