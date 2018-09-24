@@ -119,6 +119,14 @@ object-fit: cover;
   object-fit: cover;
 }
 
+.news-description {
+  display: none;
+}
+
+/* .active + .news-description {
+  display: block;
+} */
+
 
 /* Sidebar */
 .sidebar {

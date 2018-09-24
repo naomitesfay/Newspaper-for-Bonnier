@@ -7,34 +7,38 @@ const url = `https://newsapi.org/v2/everything?language=sv&q=hållbarhet&q=tekni
 // Our main function
 const recievedNews = (newsdata) => {
 
+  // const showDescription = () => {
+  //   this.classList.toggle("active")
+  // }
+
+  // const showDescription = () => {
+  //  // let element = document.getElementByClassName("news-description")
+  //  element.classList.toggle("active")
+ // }
+
+
+
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
 
-      // let smallTitle = article.title;
-      // if (article.title.length > 90) {
-      //   smallTitle = article.title.fontsize(4);
-      // }
-      //
-      // const descriptionLength = 100;
-      // let shortDescription = article.description;
-      // if (article.description.length > descriptionLength) {
-      //   shortDescription = article.description.substring (0,descriptionLength)+'...';
-      // }
 
 
       if (article.urlToImage && index < 1) {
         document.querySelector(".allNews").innerHTML +=
         `<div class="topNews">
-        <div class="news-image">
-          <img src="${article.urlToImage}"/>
-        </div>
+          <div class="news-image">
+            <img src="${article.urlToImage}"/>
+          </div>
           <div class="news-content">
             <p>Publicerad ${article.publishedAt}</p>
             <p>${article.source.name.toLowerCase()}</p>
             <h2>${article.title}</h2>
-            <p>${article.description}</p>
-            <a href="${article.url}">Read more</a>
-          </div>`
+          </div>
+            <div class="news-description">
+              <p>${article.description}</p>
+              <a href="${article.url}">Read more</a>
+            </div>
+        </div>`
       }
 
     else if (article.urlToImage && index=== 1){
@@ -53,7 +57,6 @@ const recievedNews = (newsdata) => {
       }
       else {
 
-					//Here we create and add html elements to our html file
 					document.querySelector(".allNews").innerHTML +=
 
             `<div class="news">
@@ -70,6 +73,10 @@ const recievedNews = (newsdata) => {
             </div>`
           }
     })
+
+
+   // document.getElementByClassName("topNews").onclick = showDescription
+    // showDescription()
 }
 
 
