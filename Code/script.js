@@ -4,6 +4,9 @@ const url = `https://newsapi.org/v2/everything?language=sv&q=hållbarhet&q=tekni
 // const url = `https://newsapi.org/v2/everything?language=en&q=sustainability&q=renewable&q=green-tech&sortBy=relevancy&apiKey=${key}`
 
 
+
+
+
 // Our main function
 const recievedNews = (newsdata) => {
 
@@ -79,6 +82,21 @@ const recievedNews = (newsdata) => {
     // showDescription()
 }
 
+
+//navbar function
+
+window.onscroll = function() {stickyScroll()}
+
+const navbar = document.getElementById("header")
+const sticky =navbar.offsetTop
+
+function stickyScroll() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky")
+  }
+}
 
 
 
