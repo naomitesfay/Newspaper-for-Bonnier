@@ -158,6 +158,21 @@ footer {
   position: relative;
 }
 
+.topNews {
+  width:100%;
+}
+
+.topNewssecond {
+  width: 100%;
+}
+
+.newsContainer {
+  width: 100%;
+}
+
+.sidebar {
+  display: none;
+}
 
 
 /* .news-image { */
