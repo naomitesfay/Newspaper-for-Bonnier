@@ -10,17 +10,6 @@ const url = `https://newsapi.org/v2/everything?language=sv&q=hållbarhet&q=tekni
 // Our main function
 const recievedNews = (newsdata) => {
 
-  // const showDescription = () => {
-  //   this.classList.toggle("active")
-  // }
-
-  // const showDescription = () => {
-  //  // let element = document.getElementByClassName("news-description")
-  //  element.classList.toggle("active")
- // }
-
-
-
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
 
@@ -104,3 +93,17 @@ function stickyScroll() {
 fetch(url)
   .then(response => response.json())
   .then(recievedNews)
+
+// Weather API
+fetch("http://api.openweathermap.org/data/2.5/weather?q=Stockholm,Sweden&units=metric&APPID=fec26f317908e347bad7fa3fb67882ea")
+.then((response) => {
+  return response.json()
+}).then((data) => {
+  const cityName = data.name.toUpperCase()
+  const myTemperature = data.main.temp.toFixed(1)
+  const myWeather = data.weather[0].description
+
+  document.getElementById("cityDiv").innerHTML = cityName
+  document.getElementById("tempDiv").innerHTML = myTemperature + ' \xB0'
+  document.getElementById("weatherDiv").innerHTML = myWeather
+})
