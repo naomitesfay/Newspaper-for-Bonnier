@@ -26,59 +26,82 @@ const recievedNews = (newsdata) => {
       if (article.urlToImage && index < 1) {
         document.querySelector(".allNews").innerHTML +=
         `<div class="topNews">
-          <div class="news-image">
-            <img src="${article.urlToImage}"/>
+          <div class="newsShow">
+            <div class="news-image">
+              <img src="${article.urlToImage}"/>
+            </div>
+            <div class="newsContent">
+              <p>Publicerad ${shortDate}</p>
+              <p>${article.source.name.toLowerCase()}</p>
+              <h2>${article.title}</h2>
+            </div>
           </div>
-          <div class="news-content">
-            <p>Publicerad ${shortDate}</p>
-            <p>${article.source.name.toLowerCase()}</p>
-            <h2>${article.title}</h2>
-          </div>
-            <div class="news-description">
+          <div class="newsHide">
               <p>${shortDescription}</p>
               <a href="${article.url}">Read more</a>
-            </div>
+          </div>
         </div>`
       }
 
     else if (article.urlToImage && index=== 1){
   document.querySelector(".allNews").innerHTML +=
         `<div class="topNewssecond">
-        <div class="news-image">
-          <img src="${article.urlToImage}"/>
-        </div>
-          <div class="news-content">
-            <p>Publicerad ${shortDate}</p>
-            <p>${article.source.name.toLowerCase()}</p>
-            <h2>${article.title}</h2>
-            <p>${shortDescription}</p>
-            <a href="${article.url}">Read more</a>
-          </div>`
+          <div class="newsShow">
+            <div class="news-image">
+              <img src="${article.urlToImage}"/>
+            </div>
+            <div class="newsContent">
+              <p>Publicerad ${shortDate}</p>
+              <p>${article.source.name.toLowerCase()}</p>
+              <h2>${article.title}</h2>
+            </div>
+          </div>
+          <div class="newsHide">
+              <p>${shortDescription}</p>
+              <a href="${article.url}">Read more</a>
+          </div>
+        </div>`
       }
       else {
 
 					document.querySelector(".allNews").innerHTML +=
 
             `<div class="news">
-              <div class="news-image">
-                <img src="${article.urlToImage}"/>
-              </div>
-                <div class="news-content">
+              <div class="newsShow">
+                <div class="news-image">
+                  <img src="${article.urlToImage}"/>
+                </div>
+                <div class="newsContent">
                   <p>Publicerad ${shortDate}</p>
                   <p>${article.source.name.toLowerCase()}</p>
                   <h2>${article.title}</h2>
+                </div>
+              </div>
+              <div class="newsHide">
                   <p>${shortDescription}</p>
                   <a href="${article.url}">Read more</a>
-                </div>
+              </div>
             </div>`
           }
     })
 
+// Toggle function
 
-   // document.getElementByClassName("topNews").onclick = showDescription
-    // showDescription()
+const showHide = document.getElementsByClassName("newsShow");
+   [...showHide].forEach ((element) => {
+
+         element.addEventListener("click", (e) => {
+           element.classList.toggle("active");
+           let newsHide = element.nextElementSibling;
+           if (newsHide.style.display === "block") {
+               newsHide.style.display = "none";
+           } else {
+               newsHide.style.display = "block";
+           }
+
+       })})
+
 }
-
 
 //navbar function
 
