@@ -66,6 +66,7 @@ const recievedNews = (newsdata) => {
 
 					document.querySelector(".allNews").innerHTML +=
 
+
             `<div class="news">
               <div class="newsShow">
                 <div class="news-image">
