@@ -90,13 +90,33 @@ justify-content: space-between;
   position: sticky;
 }
 
-.weatherBox {
+.weatherContainer {
   background-color: white;
   padding: 30px 10px 10px;
-
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.weatherContainer h2 {
+  text-align: center;
+}
+
+ .weatherBox {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+ }
+
+ .weatherData {
+ }
+
+ .weatherContainer img {
+   width: 120px;
+   height: 120px;
+   padding: 10px 0;
+   object-fit: contain;
+ }
 
 .login{
   height: auto;
@@ -142,7 +162,7 @@ justify-content: space-between;
   object-fit: cover;
 }
 
-img:hover {
+.newsContainer img:hover {
   opacity: 0.7;
 }
 

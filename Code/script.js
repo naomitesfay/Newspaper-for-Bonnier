@@ -14,6 +14,14 @@ const recievedNews = (newsdata) => {
     newsdata.articles.forEach((article, index) => {
 
 
+      const publishedAtLength = 10;
+          let shortDate = article.publishedAt.substring(0,publishedAtLength)
+
+      const descriptionLength = 100;
+            let shortDescription = article.description;
+            if (article.description.length > descriptionLength) {
+              shortDescription = article.description.substring (0,descriptionLength)+'...';
+            }
 
       if (article.urlToImage && index < 1) {
         document.querySelector(".allNews").innerHTML +=
@@ -22,12 +30,12 @@ const recievedNews = (newsdata) => {
             <img src="${article.urlToImage}"/>
           </div>
           <div class="news-content">
-            <p>Publicerad ${article.publishedAt}</p>
+            <p>Publicerad ${shortDate}</p>
             <p>${article.source.name.toLowerCase()}</p>
             <h2>${article.title}</h2>
           </div>
             <div class="news-description">
-              <p>${article.description}</p>
+              <p>${shortDescription}</p>
               <a href="${article.url}">Read more</a>
             </div>
         </div>`
@@ -40,10 +48,10 @@ const recievedNews = (newsdata) => {
           <img src="${article.urlToImage}"/>
         </div>
           <div class="news-content">
-            <p>Publicerad ${article.publishedAt}</p>
+            <p>Publicerad ${shortDate}</p>
             <p>${article.source.name.toLowerCase()}</p>
             <h2>${article.title}</h2>
-            <p>${article.description}</p>
+            <p>${shortDescription}</p>
             <a href="${article.url}">Read more</a>
           </div>`
       }
@@ -56,10 +64,10 @@ const recievedNews = (newsdata) => {
                 <img src="${article.urlToImage}"/>
               </div>
                 <div class="news-content">
-                  <p>Publicerad ${article.publishedAt}</p>
+                  <p>Publicerad ${shortDate}</p>
                   <p>${article.source.name.toLowerCase()}</p>
                   <h2>${article.title}</h2>
-                  <p>${article.description}</p>
+                  <p>${shortDescription}</p>
                   <a href="${article.url}">Read more</a>
                 </div>
             </div>`
