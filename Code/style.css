@@ -55,7 +55,6 @@ p {
 }
 
 .heroImage span {
-  /* color: #155c38; */
   letter-spacing: 5px;
 }
 
@@ -86,6 +85,7 @@ p {
 .header a {
   color: black;
   margin-right: 2%;
+  cursor: pointer;
   font-family: 'Montserrat', sans-serif;
 }
 
