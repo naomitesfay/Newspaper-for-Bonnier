@@ -13,7 +13,7 @@ const recievedNews = (newsdata) => {
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
 
-
+      if (article.urlToImage){
       const publishedAtLength = 10;
           let shortDate = article.publishedAt.substring(0,publishedAtLength)
 
@@ -84,7 +84,9 @@ const recievedNews = (newsdata) => {
               </div>
             </div>`
           }
+        }
     })
+
 
 // Toggle function
 
