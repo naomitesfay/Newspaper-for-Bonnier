@@ -1,6 +1,6 @@
 // Our variables
 const key = "bd9cf21acc024c8d8d95b0017f592410"
-const url = `https://newsapi.org/v2/everything?language=sv&q=hållbarhet&q=teknik&sortBy=popularity&apiKey=${key}`
+const url = `https://newsapi.org/v2/everything?language=sv&q=hållbarhet&q=miljö&q=klimat&pageSize=21&apiKey=${key}`
 // const url = `https://newsapi.org/v2/everything?language=en&q=sustainability&q=renewable&q=green-tech&sortBy=relevancy&apiKey=${key}`
 
 
@@ -23,7 +23,7 @@ const recievedNews = (newsdata) => {
               shortDescription = article.description.substring (0,descriptionLength)+'...';
             }
 
-      if (article.urlToImage && index < 1) {
+      if (index < 1) {
         document.querySelector(".allNews").innerHTML +=
         `<div class="topNews">
           <div class="newsShow">
@@ -31,8 +31,10 @@ const recievedNews = (newsdata) => {
               <img src="${article.urlToImage}"/>
             </div>
             <div class="newsContent">
-              <p>Publicerad ${shortDate}</p>
-              <p>${article.source.name.toLowerCase()}</p>
+              <div class="published">
+                <p>Publicerad: ${shortDate}</p>
+                <p>Källa: ${article.source.name.toLowerCase()}</p>
+              </div>
               <h2>${article.title}</h2>
             </div>
           </div>
@@ -43,7 +45,7 @@ const recievedNews = (newsdata) => {
         </div>`
       }
 
-    else if (article.urlToImage && index=== 1){
+    else if (index=== 1){
   document.querySelector(".allNews").innerHTML +=
         `<div class="topNewssecond">
           <div class="newsShow">
@@ -51,8 +53,10 @@ const recievedNews = (newsdata) => {
               <img src="${article.urlToImage}"/>
             </div>
             <div class="newsContent">
-              <p>Publicerad ${shortDate}</p>
-              <p>${article.source.name.toLowerCase()}</p>
+              <div class="published">
+                <p>Publicerad: ${shortDate}</p>
+                <p>Källa: ${article.source.name.toLowerCase()}</p>
+              </div>
               <h2>${article.title}</h2>
             </div>
           </div>
@@ -73,8 +77,10 @@ const recievedNews = (newsdata) => {
                   <img src="${article.urlToImage}"/>
                 </div>
                 <div class="newsContent">
-                  <p>Publicerad ${shortDate}</p>
-                  <p>${article.source.name.toLowerCase()}</p>
+                  <div class="published">
+                    <p>Publicerad: ${shortDate}</p>
+                    <p>Källa: ${article.source.name.toLowerCase()}</p>
+                  </div>
                   <h2>${article.title}</h2>
                 </div>
               </div>
