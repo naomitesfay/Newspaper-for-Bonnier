@@ -1,6 +1,6 @@
 // Our variables
 const key = "bd9cf21acc024c8d8d95b0017f592410"
-const url = `https://newsapi.org/v2/everything?language=sv&q=hållbarhet&q=miljö&q=klimat&pageSize=21&apiKey=${key}`
+const url = `https://newsapi.org/v2/everything?language=sv&q=klimat&q=miljö&q=teknik&pageSize=23&apiKey=${key}`
 // const url = `https://newsapi.org/v2/everything?language=en&q=sustainability&q=renewable&q=green-tech&sortBy=relevancy&apiKey=${key}`
 
 
